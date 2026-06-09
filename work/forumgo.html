@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ForumGo Case Study — Camilo Rojas</title>
+  <meta name="description" content="UX research and UI redesign case study by Camilo Rojas, focused on improving candidate comparison, voting feedback, review, and confirmation.">
+  <link rel="canonical" href="https://camilorojas.design/work/forumgo.html">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/case-study.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="header" data-header>
+    <div class="shell nav">
+      <a class="brand" href="/">Camilo Rojas</a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="navlinks" data-menu>Menu</button>
+      <nav id="navlinks" class="navlinks" aria-label="Main navigation" data-nav>
+        <a href="/#work">Work</a>
+        <a href="/#skills">Capabilities</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="shell case-study">
+      <section class="case-study-hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">CASE STUDY</p>
+          <h1>ForumGo</h1>
+          <p class="lead">Redesigning a voting experience to improve candidate comparison, selection feedback, review, and confidence before submission.</p>
+          <div class="case-study-meta">
+            <div><span class="label mono">Category</span><p>UX Research · Usability Testing · UI Redesign</p></div>
+            <div><span class="label mono">Role</span><p>UX Research & UI Design</p></div>
+            <div><span class="label mono">Context</span><p>UX research and interface-redesign case study</p></div>
+            <div><span class="label mono">Methods</span><p>Maze, heatmaps, post-task survey, journey analysis, high-fidelity prototyping</p></div>
+          </div>
+        </div>
+
+        <figure class="hero-figure reveal">
+          <div class="forumgo-hero" aria-hidden="true">
+            <div class="hero-state selection">
+              <div class="state-label">Selection</div>
+              <div class="candidate-cards">
+                <div class="card"><span>A</span></div>
+                <div class="card active"><span>B</span></div>
+                <div class="card"><span>C</span></div>
+              </div>
+            </div>
+            <div class="hero-state compare">
+              <div class="state-label">Compare</div>
+              <div class="compare-view">
+                <div class="compare-item"><span>B</span></div>
+                <div class="compare-item active"><span>B</span></div>
+              </div>
+              <div class="compare-action">Review differences</div>
+            </div>
+            <div class="hero-state review">
+              <div class="state-label">Review & Confirm</div>
+              <div class="review-block">
+                <div class="selected-badge">✓ Selected</div>
+                <div class="confirm-button">Confirm vote</div>
+              </div>
+            </div>
+            <div class="hero-state confirmation">
+              <div class="state-label">Confirmation</div>
+              <div class="success-mark">✓</div>
+              <div class="success-text">Vote confirmed</div>
+            </div>
+          </div>
+          <figcaption>ForumGo: Selection → Compare → Review → Confirmation</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-study-section reveal">
+        <header class="section-title">
+          <p class="eyebrow">PROBLEM</p>
+          <h2>The challenge</h2>
+        </header>
+        <p>ForumGo is a voting experience for selecting event candidates or speakers. The main issue was not whether users could technically vote, but whether they could do so with confidence. The interface offered limited support for comparison, weak feedback after selection, and insufficient reassurance before confirmation.</p>
+        <ul class="challenge-list">
+          <li>Limited candidate comparison</li>
+          <li>Selection feedback was too subtle</li>
+          <li>Confirmation felt uncertain</li>
+        </ul>
+      </section>
+
+      <section class="case-study-section reveal">
+        <header class="section-title">
+          <p class="eyebrow">EVIDENCE</p>
+          <h2>What the research revealed</h2>
+        </header>
+        <div class="finding-grid">
+          <article class="finding-card">
+            <h3>Comparison was limited</h3>
+            <p class="evidence"><strong>Evidence:</strong> The flow did not surface side-by-side context for choosing between candidates.</p>
+            <p class="impact"><strong>Impact:</strong> Users felt uncertain when making their final selection.</p>
+          </article>
+          <article class="finding-card">
+            <h3>Selection feedback was weak</h3>
+            <p class="evidence"><strong>Evidence:</strong> Selection states lacked visible feedback and confirmation.</p>
+            <p class="impact"><strong>Impact:</strong> Users did not know if their choice was actually registered.</p>
+          </article>
+          <article class="finding-card">
+            <h3>Review needed reinforcement</h3>
+            <p class="evidence"><strong>Evidence:</strong> The flow moved toward submission without a clear review step.</p>
+            <p class="impact"><strong>Impact:</strong> Users felt rushed and uncertain before the final vote.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-study-section reveal">
+        <header class="section-title">
+          <p class="eyebrow">DECISIONS</p>
+          <h2>Design response</h2>
+        </header>
+        <p>Evidence became a more intentional voting flow: selection, comparison, review, and confirmation each have a clear purpose.</p>
+        <div class="decision-list">
+          <article>
+            <h3>Finding</h3>
+            <p>Users could select, but not confidently compare</p>
+          </article>
+          <article>
+            <h3>Decision</h3>
+            <p>Make Compare available when multiple candidates are selected</p>
+          </article>
+          <article>
+            <h3>User value</h3>
+            <p>The user can review options before commiting to a vote</p>
+          </article>
+          <article>
+            <h3>Clear navigation</h3>
+            <p>Use stage labels and predictable controls to reduce uncertainty throughout the flow.</p>
+          </article>
+        </div>
+        <h4>
+        </h4>
+        <ol class="flow-diagram"> 
+
+          <li><strong>Selection</strong><p>Pick a candidate.</p></li>
+
+          <li><strong>Compare</strong><p>Review selected options.</p></li>
+
+          <li><strong>Review</strong><p>Confirm the final choice.</p></li>
+
+          <li><strong>Confirm</strong><p>Submit with clear feedback.</p></li>
+
+          <li><strong>Confirmation</strong><p>See a distinct completion state.</p></li>
+
+        </ol>
+      </section>
+
+      <section class="case-study-section reveal">
+        <header class="section-title">
+          <p class="eyebrow">VALUE</p>
+          <h2>Outcome & learning</h2>
+        </header>
+        <p>The redesign addresses core usability issues by making comparison, selection status, review, and confirmation more explicit. It creates a clearer interaction model and a stronger foundation for future validation.</p>
+        <ul class="challenge-list">
+          <li>Task completion alone is not enough; confidence matters.</li>
+          <li>Evidence should directly shape design priorities.</li>
+          <li>Responsive clarity is part of usability, not an afterthought.</li>
+        </ul>
+      </section>
+
+      <footer class="case-study-footer">
+        <div class="footer-actions">
+          <a class="btn secondary" href="/#work">Back to selected work</a>
+          <div class="next-project">
+            <p>Next project</p>
+            <p class="next-title">PagoConectado</p>
+            <p class="next-note">Page pending release</p>
+          </div>
+        </div>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
