@@ -1,0 +1,314 @@
+/* =========================================================
+   CV / RÉSUMÉ PAGE
+   Uses global tokens from styles.css
+   ========================================================= */
+
+.cv-main {
+  padding-top: clamp(4.5rem, 8vw, 7rem);
+}
+
+.cv-hero,
+.cv-grid-section,
+.cv-contact {
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.cv-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.75fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.cv-hero-copy {
+  max-width: 760px;
+}
+
+.cv-hero h1 {
+  margin: 0.65rem 0 0;
+  font-size: clamp(4rem, 12vw, 8.75rem);
+  line-height: 0.86;
+  letter-spacing: -0.075em;
+}
+
+.cv-role {
+  margin: 1rem 0 0;
+  color: var(--color-cobalt-core, #2e55ee);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.85rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cv-lead {
+  max-width: 620px;
+  margin: 1.5rem 0 0;
+  color: var(--color-text-secondary, #52525b);
+  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.35rem);
+  line-height: 1.6;
+}
+
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.cv-actions .btn {
+  min-height: 52px;
+}
+
+.cv-portrait {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--color-cobalt-mist, #eef2ff);
+  border: 1px solid var(--color-border, #ececf0);
+  border-radius: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: 0 28px 80px rgb(30 50 100 / 12%);
+}
+
+.cv-portrait::before {
+  content: "";
+  position: absolute;
+  inset: auto -20% -20% auto;
+  width: 72%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-cobalt-core, #2e55ee) 22%, transparent), transparent 64%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.cv-portrait img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.cv-grid-section {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.34fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.cv-section-heading {
+  position: sticky;
+  top: 6rem;
+}
+
+.cv-section-heading h2,
+.cv-contact h2 {
+  margin: 0.75rem 0 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.cv-card {
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #ececf0);
+  border-radius: var(--radius-lg, 1.25rem);
+  box-shadow: 0 14px 45px rgb(30 50 100 / 5%);
+}
+
+.cv-summary-card {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.cv-summary-card p {
+  max-width: 820px;
+  margin: 0;
+  color: var(--color-text-secondary, #52525b);
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.cv-summary-card p + p {
+  margin-top: 1rem;
+}
+
+.cv-strengths,
+.cv-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.cv-strengths .cv-card,
+.cv-project-card {
+  padding: 1.5rem;
+}
+
+.cv-index,
+.cv-meta,
+.cv-status {
+  color: var(--color-cobalt-core, #2e55ee);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cv-strengths h3,
+.cv-project-card h3,
+.cv-timeline-item h3 {
+  margin: 1rem 0 0.65rem;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.cv-strengths p,
+.cv-project-card p,
+.cv-timeline-item p {
+  margin: 0;
+  color: var(--color-text-secondary, #52525b);
+  line-height: 1.6;
+}
+
+.cv-timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.cv-timeline-item {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.36fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+  padding: 1.5rem;
+}
+
+.cv-timeline-item .cv-meta,
+.cv-project-card .cv-meta {
+  margin: 0.4rem 0 0;
+  color: var(--color-text-muted, #71717a);
+}
+
+.cv-inline-link {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: var(--color-cobalt-core, #2e55ee);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cv-inline-link:hover {
+  text-decoration: underline;
+}
+
+.cv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 1.5rem;
+}
+
+.cv-tags span {
+  display: inline-flex;
+  min-height: 2.35rem;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  color: var(--color-cobalt-deep, #1b3fcc);
+  background: color-mix(in srgb, var(--color-cobalt-mist, #eef2ff) 72%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--color-cobalt-core, #2e55ee) 18%, var(--color-border, #ececf0));
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.cv-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem);
+  background:
+    radial-gradient(circle at 90% 10%, color-mix(in srgb, var(--color-cobalt-light, #7eadff) 30%, transparent), transparent 44%),
+    var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #ececf0);
+  border-radius: var(--radius-lg, 1.25rem);
+  box-shadow: var(--shadow-card, 0 20px 70px rgb(30 50 100 / 8%));
+}
+
+.cv-contact p {
+  max-width: 700px;
+  margin: 1rem 0 0;
+  color: var(--color-text-secondary, #52525b);
+  line-height: 1.65;
+}
+
+.cv-contact-actions {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0;
+}
+
+.cv-contact-actions .btn {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .cv-hero,
+  .cv-grid-section,
+  .cv-contact {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-section-heading {
+    position: static;
+  }
+
+  .cv-portrait {
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .cv-timeline-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .cv-main {
+    padding-top: 4.5rem;
+  }
+
+  .cv-hero,
+  .cv-grid-section,
+  .cv-contact {
+    margin-bottom: 4rem;
+  }
+
+  .cv-hero h1 {
+    font-size: clamp(3.25rem, 20vw, 5rem);
+  }
+
+  .cv-actions,
+  .cv-contact-actions {
+    display: grid;
+    width: 100%;
+  }
+
+  .cv-actions .btn,
+  .cv-contact-actions .btn {
+    width: 100%;
+  }
+
+  .cv-strengths,
+  .cv-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-portrait {
+    aspect-ratio: 4 / 4.8;
+  }
+}

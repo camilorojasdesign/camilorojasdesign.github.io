@@ -42,38 +42,16 @@
           </div>
         </div>
 
-        <figure class="hero-figure reveal">
-          <div class="forumgo-hero" aria-hidden="true">
-            <div class="hero-state selection">
-              <div class="state-label">Selection</div>
-              <div class="candidate-cards">
-                <div class="card"><span>A</span></div>
-                <div class="card active"><span>B</span></div>
-                <div class="card"><span>C</span></div>
-              </div>
-            </div>
-            <div class="hero-state compare">
-              <div class="state-label">Compare</div>
-              <div class="compare-view">
-                <div class="compare-item"><span>B</span></div>
-                <div class="compare-item active"><span>B</span></div>
-              </div>
-              <div class="compare-action">Review differences</div>
-            </div>
-            <div class="hero-state review">
-              <div class="state-label">Review & Confirm</div>
-              <div class="review-block">
-                <div class="selected-badge">✓ Selected</div>
-                <div class="confirm-button">Confirm vote</div>
-              </div>
-            </div>
-            <div class="hero-state confirmation">
-              <div class="state-label">Confirmation</div>
-              <div class="success-mark">✓</div>
-              <div class="success-text">Vote confirmed</div>
-            </div>
-          </div>
-          <figcaption>ForumGo: Selection → Compare → Review → Confirmation</figcaption>
+        <figure class="hero-figure case-hero-visual reveal">
+          <img
+            src="/assets/images/forumgo/forumgo-selection-cover.webp"
+            alt="ForumGo speaker-selection experience shown as a corporate govtech interface"
+            width="1600"
+            height="1200"
+            loading="eager"
+            decoding="async"
+          >
+          <figcaption>ForumGo selection flow cover — opening-speaker voting experience.</figcaption>
         </figure>
       </section>
 
@@ -119,40 +97,80 @@
           <p class="eyebrow">DECISIONS</p>
           <h2>Design response</h2>
         </header>
-        <p>Evidence became a more intentional voting flow: selection, comparison, review, and confirmation each have a clear purpose.</p>
-        <div class="decision-list">
-          <article>
-            <h3>Finding</h3>
-            <p>Users could select, but not confidently compare</p>
+        <p>Evidence shaped a tighter voting flow so users can compare, select, review, and submit with confidence.</p>
+        <div class="decision-chains">
+          <article class="decision-chain">
+            <div class="decision-cell finding">
+              <span class="decision-label">Finding</span>
+              <p>Candidate comparison was limited.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell decision">
+              <span class="decision-label">Design decision</span>
+              <p>Enable Compare when two or three candidates are selected.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell value">
+              <span class="decision-label">User value</span>
+              <p>Users can review their options before committing to a vote.</p>
+            </div>
           </article>
-          <article>
-            <h3>Decision</h3>
-            <p>Make Compare available when multiple candidates are selected</p>
+          <article class="decision-chain">
+            <div class="decision-cell finding">
+              <span class="decision-label">Finding</span>
+              <p>Selection feedback was weak.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell decision">
+              <span class="decision-label">Design decision</span>
+              <p>Make selected states explicit throughout the flow.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell value">
+              <span class="decision-label">User value</span>
+              <p>Users always understand what is active and what can still be changed.</p>
+            </div>
           </article>
-          <article>
-            <h3>User value</h3>
-            <p>The user can review options before commiting to a vote</p>
-          </article>
-          <article>
-            <h3>Clear navigation</h3>
-            <p>Use stage labels and predictable controls to reduce uncertainty throughout the flow.</p>
+          <article class="decision-chain">
+            <div class="decision-cell finding">
+              <span class="decision-label">Finding</span>
+              <p>Confirmation felt uncertain.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell decision">
+              <span class="decision-label">Design decision</span>
+              <p>Strengthen the review step and final confirmation state.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell value">
+              <span class="decision-label">User value</span>
+              <p>Users receive clear reassurance before and after submitting the vote.</p>
+            </div>
           </article>
         </div>
-        <h4>
-        </h4>
-        <ol class="flow-diagram"> 
-
-          <li><strong>Selection</strong><p>Pick a candidate.</p></li>
-
-          <li><strong>Compare</strong><p>Review selected options.</p></li>
-
-          <li><strong>Review</strong><p>Confirm the final choice.</p></li>
-
-          <li><strong>Confirm</strong><p>Submit with clear feedback.</p></li>
-
-          <li><strong>Confirmation</strong><p>See a distinct completion state.</p></li>
-
-        </ol>
+        <figure class="case-feature-visual reveal">
+          <img
+            src="/assets/images/forumgo/forumgo-compare-tablet.webp"
+            alt="ForumGo comparison flow with Maze, heatmap, and usability-testing evidence overlays"
+            width="1600"
+            height="1200"
+            loading="lazy"
+            decoding="async"
+          >
+          <figcaption>Research evidence informed the comparison, review, and confirmation flow.</figcaption>
+        </figure>
+        <p class="flow-label">FINAL INTERACTION FLOW</p>
+        <div class="decision-flow" aria-label="ForumGo process flow">
+          <span class="flow-step">Selection</span>
+          <span class="flow-divider" aria-hidden="true">→</span>
+          <span class="flow-step">Compare</span>
+          <span class="flow-divider" aria-hidden="true">→</span>
+          <span class="flow-step">Review</span>
+          <span class="flow-divider" aria-hidden="true">→</span>
+          <span class="flow-step">Confirm</span>
+          <span class="flow-divider" aria-hidden="true">→</span>
+          <span class="flow-step">Confirmation</span>
+        </div>
       </section>
 
       <section class="case-study-section reveal">
