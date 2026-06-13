@@ -225,35 +225,144 @@
   font-weight: 650;
 }
 
-.cv-contact {
+/* =========================================================
+   CONTACT — HOME
+   ========================================================= */
+
+.contact {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
-  gap: clamp(2rem, 6vw, 5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 280px);
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
-  padding: clamp(2rem, 5vw, 4rem);
+
+  width: 100%;
+  padding: clamp(2.5rem, 5vw, 4rem);
+
   background:
-    radial-gradient(circle at 90% 10%, color-mix(in srgb, var(--color-cobalt-light, #7eadff) 30%, transparent), transparent 44%),
-    var(--color-surface, #ffffff);
-  border: 1px solid var(--color-border, #ececf0);
-  border-radius: var(--radius-lg, 1.25rem);
-  box-shadow: var(--shadow-card, 0 20px 70px rgb(30 50 100 / 8%));
+    radial-gradient(
+      circle at 86% 8%,
+      rgba(79, 215, 210, 0.42),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 14% 100%,
+      rgba(168, 121, 255, 0.38),
+      transparent 24rem
+    ),
+    rgba(255, 255, 255, 0.68);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--r3);
+  box-shadow: 0 25px 80px rgba(35, 36, 46, 0.11);
+
+  overflow: visible;
 }
 
-.cv-contact p {
-  max-width: 700px;
-  margin: 1rem 0 0;
-  color: var(--color-text-secondary, #52525b);
+.contact > div:first-child {
+  min-width: 0;
+}
+
+.contact .eyebrow {
+  margin-bottom: 1.25rem;
+}
+
+.contact h2 {
+  margin: 0;
+  max-width: 18ch;
+}
+
+.contact p:not(.eyebrow) {
+  margin: 1.5rem 0 0;
+  max-width: 66ch;
+  color: var(--muted);
+  font-size: 1.08rem;
   line-height: 1.65;
 }
 
-.cv-contact-actions {
+.contact-actions {
   display: grid;
   gap: 0.75rem;
-  margin-top: 0;
+  width: 100%;
+  max-width: 280px;
+  justify-self: end;
+  align-self: center;
 }
 
-.cv-contact-actions .btn {
+.contact-actions .btn {
+  display: inline-flex;
   width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.85rem 1.25rem;
+
+  border-radius: 18px;
+  text-align: center;
+  white-space: normal;
+}
+
+.contact-actions .btn:hover {
+  transform: none;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 768px) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .contact h2 {
+    max-width: 20ch;
+  }
+
+  .contact-actions {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact {
+    gap: 1.75rem;
+    padding: 1.5rem;
+    padding-bottom: 1.75rem;
+    border-radius: 1.5rem;
+  }
+
+  .contact .eyebrow {
+    margin-bottom: 1rem;
+  }
+
+  .contact h2 {
+    max-width: none;
+    font-size: clamp(2rem, 9vw, 2.65rem);
+    line-height: 1;
+  }
+
+  .contact p:not(.eyebrow) {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .contact-actions {
+    gap: 0.75rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .contact-actions .btn {
+    min-height: 52px;
+    padding-inline: 1rem;
+  }
 }
 
 @media (max-width: 900px) {
