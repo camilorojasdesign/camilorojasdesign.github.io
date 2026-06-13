@@ -43,15 +43,17 @@ body{font-family:var(--font);background:inherit;color:inherit}
 .finding-card p,.highlight-grid p{margin:0;color:var(--muted);font-size:1rem;line-height:1.75}
 .finding-card p.evidence,.finding-card p.impact{margin-bottom:12px}
 .finding-card p strong{color:var(--text);font-weight:700}
-.decision-list{display:grid;gap:24px}
-.decision-list article{padding:26px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.78)}
-.decision-list article h3{margin:0 0 12px;font-size:1rem;letter-spacing:.01em}
-.decision-list article p{margin:0 0 16px;color:var(--text);font-size:1rem;line-height:1.8}
-.flow-diagram{margin:0;padding:0;list-style:none;display:grid;gap:18px}
-.flow-diagram li{padding:24px 24px 24px 26px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.82);position:relative}
-.flow-diagram li:not(:last-child)::after{content:'→';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--color-cobalt-core);font-weight:800}
-.flow-diagram li strong{display:block;margin-bottom:12px;font-size:1.05rem}
-.flow-diagram li p{margin:0;color:var(--muted);font-size:1rem;line-height:1.75}
+.decision-chains{display:grid;gap:18px}
+.decision-chain{display:grid;grid-template-columns:minmax(160px,1fr) auto minmax(160px,1fr) auto minmax(160px,1fr);align-items:start;gap:16px;padding:24px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.96);box-shadow:0 18px 40px rgba(20,24,40,.05)}
+.decision-cell{padding:0;min-width:0}
+.decision-label{display:block;margin-bottom:10px;color:var(--color-cobalt-core);font-family:var(--font-mono);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.decision-cell p{margin:0;color:var(--text);font-size:0.98rem;line-height:1.75;max-width:34rem}
+.decision-connector{width:26px;height:100%;display:grid;place-items:center;color:var(--color-cobalt-core);opacity:.65;font-size:1rem}
+.decision-connector::before{content:'→'}
+.flow-label{margin:20px 0 10px;color:var(--color-text-secondary);font-family:var(--font-mono);font-size:.82rem;letter-spacing:.18em;text-transform:uppercase}
+.decision-flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:0}
+.flow-step{padding:10px 14px;border-radius:12px;background:var(--color-cobalt-mist);border:1px solid rgba(46,85,238,.16);color:var(--color-cobalt-core);font-weight:700;white-space:nowrap;font-size:.95rem}
+.flow-divider{color:var(--color-cobalt-core);font-size:1rem;font-weight:800}
 .case-study-footer{margin-top:80px;padding-top:44px;border-top:1px solid var(--line)}
 .footer-actions{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .footer-actions .next-project{display:grid;gap:4px}
@@ -59,6 +61,69 @@ body{font-family:var(--font);background:inherit;color:inherit}
 .next-title{font-weight:800;color:var(--text)}
 .next-note{font-size:.9rem}
 @media(max-width:1024px){.case-study-hero{grid-template-columns:1fr;gap:32px}.case-study-section{margin-top:54px}.finding-grid,.highlight-grid{grid-template-columns:1fr}.case-study-meta{gap:14px}.hero-figure{padding:20px}.visual-slot{min-height:360px}.forumgo-hero{grid-template-columns:1fr;gap:18px;padding:24px}} 
-@media(max-width:768px){.case-study{padding:32px 0 60px}.case-study-hero{gap:26px}.case-study-hero h1{font-size:clamp(2.8rem,6vw,3.6rem)}.visual-slot{min-height:300px;padding:22px}.section-title h2{font-size:2.3rem}.flow-diagram li:not(:last-child)::after{right:14px}.footer-actions{flex-direction:column;align-items:flex-start}.forumgo-hero{padding:20px;gap:14px}.hero-state{padding:18px;gap:12px}.state-label{font-size:.72rem}.candidate-cards .card{width:48px;height:48px;font-size:.88rem}} 
-@media(max-width:420px){.case-study{padding:28px 0 48px}.case-study-hero{gap:20px}.case-study-meta{gap:12px}.challenge-list{padding-left:1rem}.hero-figure{padding:18px}.visual-slot{min-height:260px}.section-title h2{font-size:2rem}.flow-diagram li{padding:20px}.flow-diagram li:not(:last-child)::after{display:none}.forumgo-hero{padding:16px;gap:12px}.hero-state{padding:14px;gap:10px}.candidate-cards .card{width:42px;height:42px;font-size:.8rem}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto} .reveal,.btn,.hero-figure,.finding-card,.highlight-grid article,.decision-list article,.flow-diagram li{transition:none;opacity:1;transform:none}}
+@media(max-width:768px){.case-study{padding:32px 0 60px}.case-study-hero{gap:26px}.case-study-hero h1{font-size:clamp(2.8rem,6vw,3.6rem)}.visual-slot{min-height:300px;padding:22px}.section-title h2{font-size:2.3rem}.decision-chain{grid-template-columns:1fr;gap:14px}.decision-connector{width:100%;height:auto;font-size:1rem}.decision-connector::before{content:'↓'}.footer-actions{flex-direction:column;align-items:flex-start}.forumgo-hero{padding:20px;gap:14px}.hero-state{padding:18px;gap:12px}.state-label{font-size:.72rem}.candidate-cards .card{width:48px;height:48px;font-size:.88rem}} 
+@media(max-width:420px){.case-study{padding:28px 0 48px}.case-study-hero{gap:20px}.case-study-meta{gap:12px}.challenge-list{padding-left:1rem}.hero-figure{padding:18px}.visual-slot{min-height:260px}.section-title h2{font-size:2rem}.decision-chain{gap:12px}.decision-cell{padding:18px}.decision-flow{gap:10px}.flow-step{flex:1 1 100%}.forumgo-hero{padding:16px;gap:12px}.hero-state{padding:14px;gap:10px}.candidate-cards .card{width:42px;height:42px;font-size:.8rem}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto} .reveal,.btn,.hero-figure,.finding-card,.highlight-grid article,.decision-cell,.decision-flow,.flow-step{transition:none;opacity:1;transform:none}}
+/* =========================================================
+   VISUAL ASSETS V1 — CASE STUDY MEDIA
+   ========================================================= */
+
+.case-hero-visual {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-cobalt-mist, #eef2ff);
+  border: 1px solid var(--color-border, #ececf0);
+  border-radius: var(--radius-lg, 28px);
+  box-shadow: var(--shadow-card, 0 18px 40px rgba(20,24,40,.06));
+}
+
+.case-hero-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.case-hero-visual figcaption,
+.case-feature-visual figcaption {
+  margin: 0;
+  padding: 0.9rem 1rem 1rem;
+  color: var(--color-text-muted, #71717a);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.case-feature-visual {
+  width: 100%;
+  margin: 2rem 0 2.25rem;
+  overflow: hidden;
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #ececf0);
+  border-radius: var(--radius-lg, 28px);
+  box-shadow: 0 18px 42px rgba(20,24,40,.06);
+}
+
+.case-feature-visual img {
+  display: block;
+  width: 100%;
+  max-height: 720px;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  background: var(--color-surface, #fff);
+}
+
+@media (max-width: 768px) {
+  .case-hero-visual img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .case-feature-visual {
+    margin: 1.5rem 0 2rem;
+  }
+}
