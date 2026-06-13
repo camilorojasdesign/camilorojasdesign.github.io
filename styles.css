@@ -56,8 +56,18 @@ body{overflow-x:hidden}
   .navlinks.open{display:flex;flex-direction:column}
   .navlinks a{padding:12px 14px;border-radius:10px}
 }
-@media(max-width:460px){.shell{width:min(calc(100% - 28px),var(--max))}.actions,.actions .btn,.contact-actions,.contact-actions .btn{width:100%}.cover{min-height:345px}.phone{width:135px;min-height:290px}.dashboard{grid-template-columns:62px 1fr}.dashboard main{padding:16px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+@media(max-width:460px){
+  .actions,
+  .actions .btn{
+    width:100%;
+  }
+
+  .contact-actions,
+  .contact-actions .btn{
+    width:100%;
+    max-width:none;
+  }
+}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 
 /*
   4. Hero
@@ -88,7 +98,17 @@ body{overflow-x:hidden}
   6. Responsive rules (additional tweaks)
 */
 @media(max-width:1000px){.hero-art{min-height:420px}.evidence-stack{width:320px}.e-card{width:260px}}
-@media(max-width:740px){.hero{grid-template-columns:1fr;gap:28px}.hero-art{order:2;min-height:360px}.reveal{padding:0 8px}}
+@media(max-width:740px){
+  .hero{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .hero-art{
+    order:2;
+    min-height:360px;
+  }
+}
 
 /* Responsive breakpoints for hero and evidence stack */
 @media(min-width:1280px){
@@ -356,5 +376,110 @@ body{overflow-x:hidden}
 @media (max-width: 420px) {
   .resume-panel {
     padding: 1.5rem;
+  }
+}
+/* =========================================================
+   HERO PROFILE VISUAL
+   ========================================================= */
+
+.hero-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
+
+.hero-profile {
+  position: relative;
+  width: min(100%, 460px);
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 24%,
+      color-mix(
+        in srgb,
+        var(--color-cobalt-light, #7eadff) 35%,
+        transparent
+      ),
+      transparent 58%
+    ),
+    var(--color-cobalt-mist, #eef2ff);
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--color-cobalt-core, #2e55ee) 18%,
+      var(--color-border, #ececf0)
+    );
+
+  border-radius: clamp(1.5rem, 3vw, 2rem);
+  box-shadow:
+    0 24px 70px rgb(27 63 204 / 12%),
+    0 8px 24px rgb(10 10 11 / 6%);
+}
+
+.hero-profile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-profile-card {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem;
+
+  background: rgb(255 255 255 / 88%);
+  border: 1px solid rgb(255 255 255 / 72%);
+  border-radius: 1rem;
+  box-shadow: 0 12px 32px rgb(10 10 11 / 10%);
+  backdrop-filter: blur(16px);
+}
+
+.hero-profile-card strong {
+  color: var(--color-text-primary, #0a0a0b);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.hero-profile-card span {
+  color: var(--color-text-secondary, #52525b);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+}
+
+@media (max-width: 768px) {
+  .hero-profile {
+    width: min(100%, 420px);
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-profile-card {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    padding: 0.9rem;
+  }
+
+  .hero-profile-card strong {
+    font-size: 0.875rem;
+  }
+
+  .hero-profile-card span {
+    font-size: 0.65rem;
   }
 }
