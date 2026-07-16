@@ -75,7 +75,9 @@
 }
 
 .hero-figure img {
+  display:block;
   width: 100%;
+  height:auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center;
@@ -212,9 +214,11 @@
 }
 
 .case-feature-visual img {
+  display:block;
   width: 100%;
-  max-height: 720px;
-  object-fit: contain;
+  height:auto;
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
   object-position: center;
   background: var(--color-surface);
 }
@@ -265,6 +269,20 @@
 .next-project {
   display: grid;
   gap: 4px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.next-project:hover {
+  background: var(--color-cobalt-mist);
+  transform: translateY(-1px);
+}
+
+.next-project:focus-visible {
+  outline: 3px solid rgb(46 85 238 / 28%);
+  outline-offset: 3px;
 }
 
 .next-project p {

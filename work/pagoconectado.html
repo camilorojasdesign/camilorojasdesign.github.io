@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PagoConectado Case Study — Camilo Rojas</title>
+  <meta name="description" content="Product design case study by Camilo Rojas focused on offline payments, shared transaction evidence, explicit system states, and synchronization after connectivity returns.">
+  <link rel="canonical" href="https://camilorojas.design/work/pagoconectado.html">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/case-study.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="header" data-header>
+    <div class="shell nav">
+      <a class="brand" href="/">Camilo Rojas</a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="navlinks" data-menu>Menu</button>
+      <nav id="navlinks" class="navlinks" aria-label="Main navigation" data-nav>
+        <a href="/#work">Work</a>
+        <a href="/#skills">Capabilities</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="shell case-study">
+      <section class="case-study-hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">CASE STUDY</p>
+          <h1>PagoConectado</h1>
+          <p class="lead">Designing a payment experience that helps both sides register, verify, and understand a transaction when internet access is unreliable.</p>
+          <div class="case-study-meta">
+            <div><span class="label mono">Category</span><p>Product Design · Fintech · Offline Experience</p></div>
+            <div><span class="label mono">Role</span><p>UX/UI & Product Design</p></div>
+            <div><span class="label mono">Context</span><p>Collaborative product-design case study for low-connectivity payments</p></div>
+            <div><span class="label mono">Methods</span><p>Persona, JTBD, scenario mapping, user flows, state modeling, high-fidelity prototyping</p></div>
+          </div>
+        </div>
+
+        <figure class="hero-figure case-hero-visual reveal">
+          <img
+            src="/assets/images/pagoconectado/pagoconectado-cover.webp"
+            alt="PagoConectado case-study cover presenting an offline fintech payment experience"
+            width="1600"
+            height="1200"
+            loading="eager"
+            decoding="async"
+          >
+          <figcaption>PagoConectado — two parties, shared evidence, and a payment with certainty.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-study-section reveal">
+        <header class="section-title">
+          <p class="eyebrow">PROBLEM</p>
+          <h2>The challenge</h2>
+        </header>
+        <p>Digital payments usually assume stable connectivity. In rural stores and other low-signal contexts, that assumption breaks: a transaction can be initiated locally while confirmation, delivery, or synchronization remains uncertain. The design challenge was to preserve continuity without hiding what the system could and could not confirm.</p>
+        <ul class="challenge-list">
+          <li>Connectivity could disappear during the payment.</li>
+          <li>Sender and recipient needed the same evidence.</li>
+          <li>Pending synchronization could lead to uncertainty or duplicate payment.</li>
+        </ul>
+      </section>
+
+      <section class="case-study-section reveal">
+        <header class="section-title">
+          <p class="eyebrow">EVIDENCE</p>
+          <h2>What the product definition revealed</h2>
+        </header>
+        <div class="finding-grid">
+          <article class="finding-card">
+            <h3>Connectivity is not a binary moment</h3>
+            <p class="evidence"><strong>Evidence:</strong> The user journey could move between online, offline, and reconnecting conditions before the transaction was fully synchronized.</p>
+            <p class="impact"><strong>Impact:</strong> A generic loading or success message would not explain the actual state of the payment.</p>
+          </article>
+          <article class="finding-card">
+            <h3>Confirmation must be shared</h3>
+            <p class="evidence"><strong>Evidence:</strong> Both parties needed to agree on the amount and recognize the same local transaction record.</p>
+            <p class="impact"><strong>Impact:</strong> One-sided feedback could create disputes or uncertainty at the point of sale.</p>
+          </article>
+          <article class="finding-card">
+            <h3>Pending requires a clear next step</h3>
+            <p class="evidence"><strong>Evidence:</strong> A locally registered transaction could still be waiting for network synchronization.</p>
+            <p class="impact"><strong>Impact:</strong> Users needed to know what was complete, what remained pending, and whether they should act again.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-study-section reveal">
+        <header class="section-title">
+          <p class="eyebrow">DECISIONS</p>
+          <h2>Design response</h2>
+        </header>
+        <p>The interaction model separates local registration from network synchronization, while keeping both parties aligned through explicit states and shared evidence.</p>
+        <div class="decision-chains">
+          <article class="decision-chain">
+            <div class="decision-cell finding">
+              <span class="decision-label">Finding</span>
+              <p>Connectivity may be lost before the network confirms the transaction.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell decision">
+              <span class="decision-label">Design decision</span>
+              <p>Separate local registration from online synchronization and label each state explicitly.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell value">
+              <span class="decision-label">User value</span>
+              <p>Users can continue the exchange without mistaking a local record for a fully synchronized payment.</p>
+            </div>
+          </article>
+          <article class="decision-chain">
+            <div class="decision-cell finding">
+              <span class="decision-label">Finding</span>
+              <p>Sender and recipient need to recognize the same transaction.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell decision">
+              <span class="decision-label">Design decision</span>
+              <p>Introduce a handshake before completion and provide mirrored evidence to both parties.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell value">
+              <span class="decision-label">User value</span>
+              <p>Both people agree on the amount, counterpart, and status before closing the sale.</p>
+            </div>
+          </article>
+          <article class="decision-chain">
+            <div class="decision-cell finding">
+              <span class="decision-label">Finding</span>
+              <p>Delayed synchronization can create doubt about whether to repeat the payment.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell decision">
+              <span class="decision-label">Design decision</span>
+              <p>Persist the transaction in history and show pending, synchronized, or action-required status.</p>
+            </div>
+            <div class="decision-connector" aria-hidden="true"></div>
+            <div class="decision-cell value">
+              <span class="decision-label">User value</span>
+              <p>Users retain traceability and understand when the payment is complete without creating duplicates.</p>
+            </div>
+          </article>
+        </div>
+        <figure class="case-feature-visual reveal">
+          <img
+            src="/assets/images/pagoconectado/pagoconectado-transaction.webp"
+            alt="Buyer and shop owner showing matching PagoConectado transaction evidence on their phones"
+            width="1800"
+            height="1080"
+            loading="lazy"
+            decoding="async"
+          >
+          <figcaption>Shared evidence gives both sides a consistent record while the system communicates whether synchronization is complete.</figcaption>
+        </figure>
+        <p class="flow-label">FINAL INTERACTION FLOW</p>
+        <div class="decision-flow" aria-label="PagoConectado process flow">
+          <span class="flow-step">Enter payment</span>
+          <span class="flow-divider" aria-hidden="true">→</span>
+          <span class="flow-step">Review details</span>
+          <span class="flow-divider" aria-hidden="true">→</span>
+          <span class="flow-step">Handshake</span>
+          <span class="flow-divider" aria-hidden="true">→</span>
+          <span class="flow-step">Register locally</span>
+          <span class="flow-divider" aria-hidden="true">→</span>
+          <span class="flow-step">Share evidence</span>
+          <span class="flow-divider" aria-hidden="true">→</span>
+          <span class="flow-step">Synchronize</span>
+        </div>
+      </section>
+
+      <section class="case-study-section reveal">
+        <header class="section-title">
+          <p class="eyebrow">VALUE</p>
+          <h2>Outcome & learning</h2>
+        </header>
+        <p>The prototype establishes a coherent interaction model for payments that may be registered locally before network reconciliation. Its value is not the promise of invisible offline processing, but the explicit communication of evidence, responsibility, and system status at every stage.</p>
+        <ul class="challenge-list">
+          <li>Trust depends on understandable states, not only a final success screen.</li>
+          <li>Shared evidence reduces ambiguity between sender and recipient.</li>
+          <li>Offline-first design must explain what happened, what is pending, and what happens next.</li>
+        </ul>
+      </section>
+
+      <footer class="case-study-footer">
+        <div class="footer-actions">
+          <a class="btn secondary" href="/#work">Back to selected work</a>
+          <a class="next-project" href="/work/subtrack.html" aria-label="View next project: Subtrack">
+            <p>Next project</p>
+            <p class="next-title">Subtrack</p>
+            <p class="next-note">Responsive subscription management</p>
+          </a>
+        </div>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
