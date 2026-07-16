@@ -64,12 +64,17 @@
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-offset);
+  overflow-x: hidden;
 }
 
 body {
-  min-width: 320px;
+  width: 100%;
+  min-width: 0px;
+  max-width: 100%;
   margin: 0;
   overflow-x: hidden;
   background:
@@ -135,8 +140,8 @@ h3 {
 }
 
 .shell {
-  width: calc(100% - 40px);
-  max-width: var(--container-width);
+  width: min(calc(100% - 40px), var(--container-width));
+  max-width: 100%;
   margin-inline: auto;
 }
 
@@ -304,10 +309,23 @@ button:focus-visible {
 .hero {
   display: grid;
   min-height: calc(100vh - 84px);
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
   align-items: center;
-  gap: clamp(40px, 6vw, 72px);
+  gap: clamp(48px, 7vw, 96px);
   padding-block: clamp(60px, 8vw, 96px);
+}
+
+.hero-copy {
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+  padding-right: clamp(24px, 4vw, 48px);
+}
+
+.hero-copy h1 {
+  max-width: 680px;
+  margin: 0;
+  padding-right: clamp(24px, 4vw, 48px);
 }
 
 .hero > * {
@@ -336,6 +354,7 @@ button:focus-visible {
   position: relative;
   display: grid;
   min-width: 0;
+  z-index: 1;
   place-items: center;
 }
 
@@ -421,14 +440,16 @@ button:focus-visible {
 
 .project-cover {
   position: relative;
+  min-width: 0;
   min-height: 600px;
   overflow: hidden;
 }
 
 .project-cover img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -690,20 +711,38 @@ footer,
 @media (max-width: 1040px) {
   .hero {
     min-height: auto;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 48px;
   }
 
+  .hero-copy {
+    padding-right: 0;
+  }
+
+  .hero-copy h1 {
+    max-width: 720px;
+    padding-right: 0;
+  }
   .project {
     grid-template-columns: 1fr;
   }
 
-  .project-cover {
+  .project-cover { 
+    width: min(500px, calc(100% - 40px));
     min-height: 0;
-    aspect-ratio: 4 / 3;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    margin:32px auto 0;
   }
 
   .project-cover img {
     object-fit: cover;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    align-items: start;
   }
 
   .skills {
@@ -715,49 +754,24 @@ footer,
   }
 }
 
-@media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-    align-items: start;
-    gap: 36px;
-    padding-top: 52px;
-  }
 
-  .hero-art {
-    justify-items: center;
-  }
-
-  .hero-profile {
-    width: min(100%, 420px);
-  }
-
-  .copy {
-    padding: 30px 24px 36px;
-  }
-
-  .meta-row {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-
-  .resume-panel,
-  .contact {
-    grid-template-columns: 1fr;
-    padding: 32px;
-  }
-
-  .resume-actions,
-  .contact-actions {
-    max-width: none;
-    justify-self: stretch;
-  }
-}
-
-@media (max-width: 740px) {
+@media (max-width: 760px) {
   .menu {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .project-cover { 
+    width: min(500px, calc(100% - 40px));
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    margin-top: 24px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
   }
 
   .navlinks {
@@ -805,9 +819,55 @@ footer,
   }
 }
 
+@media (max-width: 600px) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 40px;
+    padding-top: 52px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.75rem, 13vw, 4rem);
+    line-height: 0.94;
+  }
+
+  .hero-art {
+    width: min(100%, 620px);
+    margin-top: 8px auto 0;
+    margin-inline: auto;
+    justify-items: center;
+  }
+
+  .hero-profile {
+    width: min(100%, 420px);
+  }
+
+  .copy {
+    padding: 30px 24px 36px;
+  }
+
+  .meta-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .resume-panel,
+  .contact {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+
+  .resume-actions,
+  .contact-actions {
+    max-width: none;
+    justify-self: stretch;
+  }
+}
+
 @media (max-width: 480px) {
   .shell {
-    width: calc(100% - 28px);
+    width: min(calc(100% - 24px), var(--container-width));
   }
 
   h1 {
@@ -836,9 +896,6 @@ footer,
     border-radius: 22px;
   }
 
-  .project-cover {
-    aspect-ratio: 4 / 3;
-  }
 
   .copy {
     padding: 26px 18px 30px;
