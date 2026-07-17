@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NS6PZJFH');</script><!-- End Google Tag Manager -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Caso de estudio PagoConectado — Camilo Rojas</title>
+<meta content="Caso de estudio de diseño de producto de Camilo Rojas enfocado en pagos sin conexión, evidencia compartida, estados explícitos del sistema y sincronización al recuperar conectividad." name="description"/>
+<meta content="article" property="og:type"/><meta content="Caso de estudio PagoConectado — Camilo Rojas" property="og:title"/><meta content="Caso de estudio de diseño de producto de Camilo Rojas enfocado en pagos sin conexión, evidencia compartida, estados explícitos del sistema y sincronización al recuperar conectividad." property="og:description"/><meta content="https://camilorojas.design/es/work/pagoconectado.html" property="og:url"/><meta content="es_CO" property="og:locale"/><meta content="en_US" property="og:locale:alternate"/><link href="https://camilorojas.design/es/work/pagoconectado.html" rel="canonical"/><link href="https://camilorojas.design/work/pagoconectado.html" hreflang="en" rel="alternate"/><link href="https://camilorojas.design/es/work/pagoconectado.html" hreflang="es" rel="alternate"/><link href="https://camilorojas.design/work/pagoconectado.html" hreflang="x-default" rel="alternate"/>
+<link href="/assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link as="font" crossorigin="" href="/assets/fonts/Geist-Variable.woff2" rel="preload" type="font/woff2"/>
+<link href="/styles.css" rel="stylesheet"/>
+<link href="/case-study.css" rel="stylesheet"/>
+<script defer="" src="/script.js"></script>
+</head>
+<body data-page-id="pagoconectado" data-page-type="case_study"><!-- Google Tag Manager (noscript) --><noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NS6PZJFH" style="display:none;visibility:hidden" width="0"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="header" data-header="">
+<div class="shell nav">
+<a class="brand" href="/es/">Camilo Rojas</a>
+<div class="nav-main"><nav aria-label="Navegación principal" class="navlinks" data-nav="" id="navlinks">
+<a href="/es/#work">Proyectos</a>
+<a href="/es/#skills">Capacidades</a>
+<a href="/es/#about">Sobre mí</a>
+<a href="/es/#contact">Contacto</a>
+</nav><button aria-controls="navlinks" aria-expanded="false" class="menu" data-menu="" type="button">Menú</button></div></div>
+</header><nav aria-label="Selector de idioma" class="language-switcher" data-active-language="es" data-language-switcher="">
+<a aria-label="Cambiar a inglés. Idioma actual: español." class="language-switcher__toggle" data-language="en" data-language-switch="" data-switch-location="floating_bottom_left" href="/work/pagoconectado.html" hreflang="en" lang="en">
+<span aria-hidden="true" class="language-switcher__slider"></span>
+<span class="language-switcher__option" data-language-option="en">EN</span>
+<span aria-current="true" class="language-switcher__option" data-language-option="es">ES</span>
+</a>
+</nav>
+<main id="main">
+<article class="shell case-study">
+<section class="case-study-hero">
+<div class="hero-copy reveal">
+<p class="eyebrow">CASO DE ESTUDIO</p>
+<h1>PagoConectado</h1>
+<p class="lead">Diseño de una experiencia de pago que ayuda a ambas partes a registrar, verificar y comprender una transacción cuando el acceso a internet es inestable.</p>
+<div class="case-study-meta">
+<div><span class="label mono">Categoría</span><p>Diseño de Producto · Fintech · Experiencia sin conexión</p></div>
+<div><span class="label mono">Rol</span><p>UX/UI y Diseño de Producto</p></div>
+<div><span class="label mono">Contexto</span><p>Caso de estudio colaborativo de diseño de producto para pagos con baja conectividad</p></div>
+<div><span class="label mono">Métodos</span><p>Persona, JTBD, mapeo de escenarios, flujos de usuario, modelado de estados y prototipado de alta fidelidad</p></div>
+</div>
+</div>
+<figure class="hero-figure case-hero-visual reveal">
+<img alt="Portada del caso de estudio PagoConectado que presenta una experiencia fintech de pago sin conexión" decoding="async" height="1500" loading="eager" src="/assets/images/pagoconectado/pagoconectado-cover.webp" width="1200"/><div aria-hidden="true" class="cover-copy"><p class="cover-project">PagoConectado</p><p class="cover-headline"><span>Dos partes, una evidencia,</span><span>un pago con certeza.</span></p><p class="cover-discipline">UX/UI · Product Design · Fintech</p></div>
+<figcaption>PagoConectado — dos partes, una evidencia compartida y un pago con certeza.</figcaption>
+</figure>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">PROBLEMA</p>
+<h2>El desafío</h2>
+</header>
+<p>Los pagos digitales suelen asumir una conectividad estable. En tiendas rurales y otros contextos con baja señal, esa premisa se rompe: una transacción puede iniciarse localmente mientras su confirmación, entrega o sincronización continúa incierta. El desafío de diseño consistió en preservar la continuidad sin ocultar lo que el sistema podía y no podía confirmar.</p>
+<ul class="challenge-list">
+<li>La conectividad podía desaparecer durante el pago.</li>
+<li>Emisor y receptor necesitaban la misma evidencia.</li>
+<li>La sincronización pendiente podía generar incertidumbre o un pago duplicado.</li>
+</ul>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">EVIDENCIA</p>
+<h2>Lo que reveló la definición del producto</h2>
+</header>
+<div class="finding-grid">
+<article class="finding-card">
+<h3>La conectividad no es un momento binario</h3>
+<p class="evidence"><strong>Evidencia:</strong> El journey podía pasar por condiciones online, offline y de reconexión antes de que la transacción quedara completamente sincronizada.</p>
+<p class="impact"><strong>Impacto:</strong> Un mensaje genérico de carga o éxito no explicaría el estado real del pago.</p>
+</article>
+<article class="finding-card">
+<h3>La confirmación debe ser compartida</h3>
+<p class="evidence"><strong>Evidencia:</strong> Ambas partes necesitaban acordar el monto y reconocer el mismo registro local de la transacción.</p>
+<p class="impact"><strong>Impacto:</strong> El feedback unilateral podía generar disputas o incertidumbre en el punto de venta.</p>
+</article>
+<article class="finding-card">
+<h3>Un estado pendiente necesita un siguiente paso claro</h3>
+<p class="evidence"><strong>Evidencia:</strong> Una transacción registrada localmente aún podía estar esperando la sincronización de red.</p>
+<p class="impact"><strong>Impacto:</strong> Las personas necesitaban saber qué estaba completo, qué seguía pendiente y si debían actuar de nuevo.</p>
+</article>
+</div>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">DECISIONES</p>
+<h2>Respuesta de diseño</h2>
+</header>
+<p>El modelo de interacción separa el registro local de la sincronización de red y mantiene a ambas partes alineadas mediante estados explícitos y evidencia compartida.</p>
+<div class="decision-chains">
+<article class="decision-chain">
+<div class="decision-cell finding">
+<span class="decision-label">Hallazgo</span>
+<p>La conectividad puede perderse antes de que la red confirme la transacción.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell decision">
+<span class="decision-label">Decisión de diseño</span>
+<p>Separar el registro local de la sincronización online y etiquetar cada estado de forma explícita.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell value">
+<span class="decision-label">Valor para el usuario</span>
+<p>Las personas pueden continuar el intercambio sin confundir un registro local con un pago completamente sincronizado.</p>
+</div>
+</article>
+<article class="decision-chain">
+<div class="decision-cell finding">
+<span class="decision-label">Hallazgo</span>
+<p>Emisor y receptor necesitan reconocer la misma transacción.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell decision">
+<span class="decision-label">Decisión de diseño</span>
+<p>Introducir un handshake antes de completar y proporcionar evidencia equivalente a ambas partes.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell value">
+<span class="decision-label">Valor para el usuario</span>
+<p>Ambas personas acuerdan el monto, la contraparte y el estado antes de cerrar la venta.</p>
+</div>
+</article>
+<article class="decision-chain">
+<div class="decision-cell finding">
+<span class="decision-label">Hallazgo</span>
+<p>La sincronización tardía puede generar dudas sobre si se debe repetir el pago.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell decision">
+<span class="decision-label">Decisión de diseño</span>
+<p>Conservar la transacción en el historial y mostrar estados pendiente, sincronizado o requiere acción.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell value">
+<span class="decision-label">Valor para el usuario</span>
+<p>Las personas conservan la trazabilidad y entienden cuándo el pago está completo sin crear duplicados.</p>
+</div>
+</article>
+</div>
+<figure class="case-feature-visual reveal">
+<img alt="Comprador y comerciante mostrando evidencia coincidente de una transacción de PagoConectado en sus teléfonos" decoding="async" height="1080" loading="lazy" src="/assets/images/pagoconectado/pagoconectado-transaction.webp" width="1800"/>
+<figcaption>La evidencia compartida ofrece a ambas partes un registro consistente mientras el sistema comunica si la sincronización está completa.</figcaption>
+</figure>
+<p class="flow-label">FLUJO FINAL DE INTERACCIÓN</p>
+<div aria-label="Flujo de proceso de PagoConectado" class="decision-flow">
+<span class="flow-step">Ingresar pago</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Revisar detalles</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Handshake</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Registrar localmente</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Compartir evidencia</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Sincronizar</span>
+</div>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">VALOR</p>
+<h2>Resultado y aprendizaje</h2>
+</header>
+<p>El prototipo establece un modelo de interacción coherente para pagos que pueden registrarse localmente antes de la conciliación con la red. Su valor no está en prometer un procesamiento offline invisible, sino en comunicar explícitamente la evidencia, la responsabilidad y el estado del sistema en cada etapa.</p>
+<ul class="challenge-list">
+<li>La confianza depende de estados comprensibles, no solo de una pantalla final de éxito.</li>
+<li>La evidencia compartida reduce la ambigüedad entre emisor y receptor.</li>
+<li>El diseño offline-first debe explicar qué ocurrió, qué está pendiente y qué sucederá después.</li>
+</ul>
+</section>
+<footer class="case-study-footer">
+<div class="footer-actions">
+<a class="btn secondary" href="/es/#work">Volver a proyectos seleccionados</a>
+<nav aria-label="Navegación de casos de estudio" class="project-pagination"><a aria-label="Ver proyecto anterior: ForumGo" class="project-nav-link previous-project" href="/es/work/forumgo.html"><p>Proyecto anterior</p><p class="next-title">ForumGo</p><p class="next-note">Rediseño de experiencia de votación</p></a><a aria-label="Ver proyecto siguiente: Subtrack" class="project-nav-link next-project" href="/es/work/subtrack.html"><p>Proyecto siguiente</p><p class="next-title">Subtrack</p><p class="next-note">Gestión responsive de suscripciones</p></a></nav></div>
+</footer>
+</article>
+</main>
+</body>
+</html>

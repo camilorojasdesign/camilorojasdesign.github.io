@@ -1,203 +1,184 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ForumGo Case Study — Camilo Rojas</title>
-  <meta name="description" content="UX research and UI redesign case study by Camilo Rojas, focused on improving candidate comparison, voting feedback, review, and confirmation.">
-  <link rel="canonical" href="https://camilorojas.design/work/forumgo.html">
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/case-study.css">
-  <script src="/script.js" defer></script>
+<head><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NS6PZJFH');</script><!-- End Google Tag Manager -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ForumGo Case Study — Camilo Rojas</title>
+<meta content="UX research and UI redesign case study by Camilo Rojas, focused on improving candidate comparison, voting feedback, review, and confirmation." name="description"/>
+<meta content="article" property="og:type"/><meta content="ForumGo Case Study — Camilo Rojas" property="og:title"/><meta content="UX research and UI redesign case study by Camilo Rojas, focused on improving candidate comparison, voting feedback, review, and confirmation." property="og:description"/><meta content="https://camilorojas.design/work/forumgo.html" property="og:url"/><meta content="en_US" property="og:locale"/><meta content="es_CO" property="og:locale:alternate"/><link href="https://camilorojas.design/work/forumgo.html" rel="canonical"/><link href="https://camilorojas.design/work/forumgo.html" hreflang="en" rel="alternate"/><link href="https://camilorojas.design/es/work/forumgo.html" hreflang="es" rel="alternate"/><link href="https://camilorojas.design/work/forumgo.html" hreflang="x-default" rel="alternate"/>
+<link href="/assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link as="font" crossorigin="" href="/assets/fonts/Geist-Variable.woff2" rel="preload" type="font/woff2"/>
+<link href="/styles.css" rel="stylesheet"/>
+<link href="/case-study.css" rel="stylesheet"/>
+<script defer="" src="/script.js"></script>
 </head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header class="header" data-header>
-    <div class="shell nav">
-      <a class="brand" href="/">Camilo Rojas</a>
-      <button class="menu" type="button" aria-expanded="false" aria-controls="navlinks" data-menu>Menu</button>
-      <nav id="navlinks" class="navlinks" aria-label="Main navigation" data-nav>
-        <a href="/#work">Work</a>
-        <a href="/#skills">Capabilities</a>
-        <a href="/#about">About</a>
-        <a href="/#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <article class="shell case-study">
-      <section class="case-study-hero">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">CASE STUDY</p>
-          <h1>ForumGo</h1>
-          <p class="lead">Redesigning a voting experience to improve candidate comparison, selection feedback, review, and confidence before submission.</p>
-          <div class="case-study-meta">
-            <div><span class="label mono">Category</span><p>UX Research · Usability Testing · UI Redesign</p></div>
-            <div><span class="label mono">Role</span><p>UX Research & UI Design</p></div>
-            <div><span class="label mono">Context</span><p>UX research and interface-redesign case study</p></div>
-            <div><span class="label mono">Methods</span><p>Maze, heatmaps, post-task survey, journey analysis, high-fidelity prototyping</p></div>
-          </div>
-        </div>
-
-        <figure class="hero-figure case-hero-visual reveal">
-          <img
-            src="/assets/images/forumgo/forumgo-selection-cover.webp"
-            alt="ForumGo speaker-selection experience shown as a corporate govtech interface"
-            width="1600"
-            height="1200"
-            loading="eager"
-            decoding="async"
-          >
-          <figcaption>ForumGo selection flow cover — opening-speaker voting experience.</figcaption>
-        </figure>
-      </section>
-
-      <section class="case-study-section reveal">
-        <header class="section-title">
-          <p class="eyebrow">PROBLEM</p>
-          <h2>The challenge</h2>
-        </header>
-        <p>ForumGo is a voting experience for selecting event candidates or speakers. The main issue was not whether users could technically vote, but whether they could do so with confidence. The interface offered limited support for comparison, weak feedback after selection, and insufficient reassurance before confirmation.</p>
-        <ul class="challenge-list">
-          <li>Limited candidate comparison</li>
-          <li>Selection feedback was too subtle</li>
-          <li>Confirmation felt uncertain</li>
-        </ul>
-      </section>
-
-      <section class="case-study-section reveal">
-        <header class="section-title">
-          <p class="eyebrow">EVIDENCE</p>
-          <h2>What the research revealed</h2>
-        </header>
-        <div class="finding-grid">
-          <article class="finding-card">
-            <h3>Comparison was limited</h3>
-            <p class="evidence"><strong>Evidence:</strong> The flow did not surface side-by-side context for choosing between candidates.</p>
-            <p class="impact"><strong>Impact:</strong> Users felt uncertain when making their final selection.</p>
-          </article>
-          <article class="finding-card">
-            <h3>Selection feedback was weak</h3>
-            <p class="evidence"><strong>Evidence:</strong> Selection states lacked visible feedback and confirmation.</p>
-            <p class="impact"><strong>Impact:</strong> Users did not know if their choice was actually registered.</p>
-          </article>
-          <article class="finding-card">
-            <h3>Review needed reinforcement</h3>
-            <p class="evidence"><strong>Evidence:</strong> The flow moved toward submission without a clear review step.</p>
-            <p class="impact"><strong>Impact:</strong> Users felt rushed and uncertain before the final vote.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="case-study-section reveal">
-        <header class="section-title">
-          <p class="eyebrow">DECISIONS</p>
-          <h2>Design response</h2>
-        </header>
-        <p>Evidence shaped a tighter voting flow so users can compare, select, review, and submit with confidence.</p>
-        <div class="decision-chains">
-          <article class="decision-chain">
-            <div class="decision-cell finding">
-              <span class="decision-label">Finding</span>
-              <p>Candidate comparison was limited.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell decision">
-              <span class="decision-label">Design decision</span>
-              <p>Enable Compare when two or three candidates are selected.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell value">
-              <span class="decision-label">User value</span>
-              <p>Users can review their options before committing to a vote.</p>
-            </div>
-          </article>
-          <article class="decision-chain">
-            <div class="decision-cell finding">
-              <span class="decision-label">Finding</span>
-              <p>Selection feedback was weak.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell decision">
-              <span class="decision-label">Design decision</span>
-              <p>Make selected states explicit throughout the flow.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell value">
-              <span class="decision-label">User value</span>
-              <p>Users always understand what is active and what can still be changed.</p>
-            </div>
-          </article>
-          <article class="decision-chain">
-            <div class="decision-cell finding">
-              <span class="decision-label">Finding</span>
-              <p>Confirmation felt uncertain.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell decision">
-              <span class="decision-label">Design decision</span>
-              <p>Strengthen the review step and final confirmation state.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell value">
-              <span class="decision-label">User value</span>
-              <p>Users receive clear reassurance before and after submitting the vote.</p>
-            </div>
-          </article>
-        </div>
-        <figure class="case-feature-visual reveal">
-          <img
-            src="/assets/images/forumgo/forumgo-compare-tablet.webp"
-            alt="ForumGo comparison flow with Maze, heatmap, and usability-testing evidence overlays"
-            width="1800"
-            height="1080"
-            loading="lazy"
-            decoding="async"
-          >
-          <figcaption>Research evidence informed the comparison, review, and confirmation flow.</figcaption>
-        </figure>
-        <p class="flow-label">FINAL INTERACTION FLOW</p>
-        <div class="decision-flow" aria-label="ForumGo process flow">
-          <span class="flow-step">Selection</span>
-          <span class="flow-divider" aria-hidden="true">→</span>
-          <span class="flow-step">Compare</span>
-          <span class="flow-divider" aria-hidden="true">→</span>
-          <span class="flow-step">Review</span>
-          <span class="flow-divider" aria-hidden="true">→</span>
-          <span class="flow-step">Confirm</span>
-          <span class="flow-divider" aria-hidden="true">→</span>
-          <span class="flow-step">Confirmation</span>
-        </div>
-      </section>
-
-      <section class="case-study-section reveal">
-        <header class="section-title">
-          <p class="eyebrow">VALUE</p>
-          <h2>Outcome & learning</h2>
-        </header>
-        <p>The redesign addresses core usability issues by making comparison, selection status, review, and confirmation more explicit. It creates a clearer interaction model and a stronger foundation for future validation.</p>
-        <ul class="challenge-list">
-          <li>Task completion alone is not enough; confidence matters.</li>
-          <li>Evidence should directly shape design priorities.</li>
-          <li>Responsive clarity is part of usability, not an afterthought.</li>
-        </ul>
-      </section>
-
-      <footer class="case-study-footer">
-        <div class="footer-actions">
-          <a class="btn secondary" href="/#work">Back to selected work</a>
-          <a class="next-project" href="/work/pagoconectado.html" aria-label="View next project: PagoConectado">
-            <p>Next project</p>
-            <p class="next-title">PagoConectado</p>
-            <p class="next-note">Offline payment experience</p>
-          </a>
-        </div>
-      </footer>
-    </article>
-  </main>
+<body data-page-id="forumgo" data-page-type="case_study"><!-- Google Tag Manager (noscript) --><noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NS6PZJFH" style="display:none;visibility:hidden" width="0"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="header" data-header="">
+<div class="shell nav">
+<a class="brand" href="/">Camilo Rojas</a>
+<div class="nav-main"><nav aria-label="Main navigation" class="navlinks" data-nav="" id="navlinks">
+<a href="/#work">Work</a>
+<a href="/#skills">Capabilities</a>
+<a href="/#about">About</a>
+<a href="/#contact">Contact</a>
+</nav><button aria-controls="navlinks" aria-expanded="false" class="menu" data-menu="" type="button">Menu</button></div></div>
+</header><nav aria-label="Language selector" class="language-switcher" data-active-language="en" data-language-switcher="">
+<a aria-label="Switch to Spanish. Current language: English." class="language-switcher__toggle" data-language="es" data-language-switch="" data-switch-location="floating_bottom_left" href="/es/work/forumgo.html" hreflang="es" lang="es">
+<span aria-hidden="true" class="language-switcher__slider"></span>
+<span aria-current="true" class="language-switcher__option" data-language-option="en">EN</span>
+<span class="language-switcher__option" data-language-option="es">ES</span>
+</a>
+</nav>
+<main id="main">
+<article class="shell case-study">
+<section class="case-study-hero">
+<div class="hero-copy reveal">
+<p class="eyebrow">CASE STUDY</p>
+<h1>ForumGo</h1>
+<p class="lead">Redesigning a voting experience to improve candidate comparison, selection feedback, review, and confidence before submission.</p>
+<div class="case-study-meta">
+<div><span class="label mono">Category</span><p>UX Research · Usability Testing · UI Redesign</p></div>
+<div><span class="label mono">Role</span><p>UX Research &amp; UI Design</p></div>
+<div><span class="label mono">Context</span><p>UX research and interface-redesign case study</p></div>
+<div><span class="label mono">Methods</span><p>Maze, heatmaps, post-task survey, journey analysis, high-fidelity prototyping</p></div>
+</div>
+</div>
+<figure class="hero-figure case-hero-visual reveal">
+<img alt="ForumGo case-study cover presenting a corporate govtech voting experience" decoding="async" height="1500" loading="eager" src="/assets/images/forumgo/forumgo-cover.webp" width="1200"/><div aria-hidden="true" class="cover-copy"><p class="cover-project">ForumGo</p><p class="cover-headline"><span>A clearer vote,</span><span>traceable and trustworthy.</span></p><p class="cover-discipline">UX/UI · Product Design · GovTech</p></div>
+<figcaption>ForumGo selection flow cover — opening-speaker voting experience.</figcaption>
+</figure>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">PROBLEM</p>
+<h2>The challenge</h2>
+</header>
+<p>ForumGo is a voting experience for selecting event candidates or speakers. The main issue was not whether users could technically vote, but whether they could do so with confidence. The interface offered limited support for comparison, weak feedback after selection, and insufficient reassurance before confirmation.</p>
+<ul class="challenge-list">
+<li>Limited candidate comparison</li>
+<li>Selection feedback was too subtle</li>
+<li>Confirmation felt uncertain</li>
+</ul>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">EVIDENCE</p>
+<h2>What the research revealed</h2>
+</header>
+<div class="finding-grid">
+<article class="finding-card">
+<h3>Comparison was limited</h3>
+<p class="evidence"><strong>Evidence:</strong> The flow did not surface side-by-side context for choosing between candidates.</p>
+<p class="impact"><strong>Impact:</strong> Users felt uncertain when making their final selection.</p>
+</article>
+<article class="finding-card">
+<h3>Selection feedback was weak</h3>
+<p class="evidence"><strong>Evidence:</strong> Selection states lacked visible feedback and confirmation.</p>
+<p class="impact"><strong>Impact:</strong> Users did not know if their choice was actually registered.</p>
+</article>
+<article class="finding-card">
+<h3>Review needed reinforcement</h3>
+<p class="evidence"><strong>Evidence:</strong> The flow moved toward submission without a clear review step.</p>
+<p class="impact"><strong>Impact:</strong> Users felt rushed and uncertain before the final vote.</p>
+</article>
+</div>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">DECISIONS</p>
+<h2>Design response</h2>
+</header>
+<p>Evidence shaped a tighter voting flow so users can compare, select, review, and submit with confidence.</p>
+<div class="decision-chains">
+<article class="decision-chain">
+<div class="decision-cell finding">
+<span class="decision-label">Finding</span>
+<p>Candidate comparison was limited.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell decision">
+<span class="decision-label">Design decision</span>
+<p>Enable Compare when two or three candidates are selected.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell value">
+<span class="decision-label">User value</span>
+<p>Users can review their options before committing to a vote.</p>
+</div>
+</article>
+<article class="decision-chain">
+<div class="decision-cell finding">
+<span class="decision-label">Finding</span>
+<p>Selection feedback was weak.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell decision">
+<span class="decision-label">Design decision</span>
+<p>Make selected states explicit throughout the flow.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell value">
+<span class="decision-label">User value</span>
+<p>Users always understand what is active and what can still be changed.</p>
+</div>
+</article>
+<article class="decision-chain">
+<div class="decision-cell finding">
+<span class="decision-label">Finding</span>
+<p>Confirmation felt uncertain.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell decision">
+<span class="decision-label">Design decision</span>
+<p>Strengthen the review step and final confirmation state.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell value">
+<span class="decision-label">User value</span>
+<p>Users receive clear reassurance before and after submitting the vote.</p>
+</div>
+</article>
+</div>
+<figure class="case-feature-visual reveal">
+<img alt="ForumGo comparison flow with Maze, heatmap, and usability-testing evidence overlays" decoding="async" height="1080" loading="lazy" src="/assets/images/forumgo/forumgo-compare-tablet.webp" width="1800"/>
+<figcaption>Research evidence informed the comparison, review, and confirmation flow.</figcaption>
+</figure>
+<p class="flow-label">FINAL INTERACTION FLOW</p>
+<div aria-label="ForumGo process flow" class="decision-flow">
+<span class="flow-step">Selection</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Compare</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Review</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Confirm</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Confirmation</span>
+</div>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">VALUE</p>
+<h2>Outcome &amp; learning</h2>
+</header>
+<p>The redesign addresses core usability issues by making comparison, selection status, review, and confirmation more explicit. It creates a clearer interaction model and a stronger foundation for future validation.</p>
+<ul class="challenge-list">
+<li>Task completion alone is not enough; confidence matters.</li>
+<li>Evidence should directly shape design priorities.</li>
+<li>Responsive clarity is part of usability, not an afterthought.</li>
+</ul>
+</section>
+<footer class="case-study-footer">
+<div class="footer-actions">
+<a class="btn secondary" href="/#work">Back to selected work</a>
+<nav aria-label="Case study navigation" class="project-pagination"><a aria-label="View previous project: Subtrack" class="project-nav-link previous-project" href="/work/subtrack.html"><p>Previous project</p><p class="next-title">Subtrack</p><p class="next-note">Responsive subscription management</p></a><a aria-label="View next project: PagoConectado" class="project-nav-link next-project" href="/work/pagoconectado.html"><p>Next project</p><p class="next-title">PagoConectado</p><p class="next-note">Offline payment experience</p></a></nav></div>
+</footer>
+</article>
+</main>
 </body>
 </html>

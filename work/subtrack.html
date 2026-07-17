@@ -1,203 +1,184 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Subtrack Case Study — Camilo Rojas</title>
-  <meta name="description" content="UI design and design-systems case study by Camilo Rojas focused on subscription visibility, renewal states, reusable components, and responsive information hierarchy.">
-  <link rel="canonical" href="https://camilorojas.design/work/subtrack.html">
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/case-study.css">
-  <script src="/script.js" defer></script>
+<head><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NS6PZJFH');</script><!-- End Google Tag Manager -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Subtrack Case Study — Camilo Rojas</title>
+<meta content="UI design and design-systems case study by Camilo Rojas focused on subscription visibility, renewal states, reusable components, and responsive information hierarchy." name="description"/>
+<meta content="article" property="og:type"/><meta content="Subtrack Case Study — Camilo Rojas" property="og:title"/><meta content="UI design and design-systems case study by Camilo Rojas focused on subscription visibility, renewal states, reusable components, and responsive information hierarchy." property="og:description"/><meta content="https://camilorojas.design/work/subtrack.html" property="og:url"/><meta content="en_US" property="og:locale"/><meta content="es_CO" property="og:locale:alternate"/><link href="https://camilorojas.design/work/subtrack.html" rel="canonical"/><link href="https://camilorojas.design/work/subtrack.html" hreflang="en" rel="alternate"/><link href="https://camilorojas.design/es/work/subtrack.html" hreflang="es" rel="alternate"/><link href="https://camilorojas.design/work/subtrack.html" hreflang="x-default" rel="alternate"/>
+<link href="/assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link as="font" crossorigin="" href="/assets/fonts/Geist-Variable.woff2" rel="preload" type="font/woff2"/>
+<link href="/styles.css" rel="stylesheet"/>
+<link href="/case-study.css" rel="stylesheet"/>
+<script defer="" src="/script.js"></script>
 </head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header class="header" data-header>
-    <div class="shell nav">
-      <a class="brand" href="/">Camilo Rojas</a>
-      <button class="menu" type="button" aria-expanded="false" aria-controls="navlinks" data-menu>Menu</button>
-      <nav id="navlinks" class="navlinks" aria-label="Main navigation" data-nav>
-        <a href="/#work">Work</a>
-        <a href="/#skills">Capabilities</a>
-        <a href="/#about">About</a>
-        <a href="/#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <article class="shell case-study">
-      <section class="case-study-hero">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">CASE STUDY</p>
-          <h1>Subtrack</h1>
-          <p class="lead">Creating a responsive subscription-management interface that turns recurring payments, renewals, and savings opportunities into a clearer system.</p>
-          <div class="case-study-meta">
-            <div><span class="label mono">Category</span><p>UI Design · Responsive Web · Design Systems</p></div>
-            <div><span class="label mono">Role</span><p>UI Design & Design Systems</p></div>
-            <div><span class="label mono">Context</span><p>Independent interface and responsive-system case study</p></div>
-            <div><span class="label mono">Methods</span><p>Information hierarchy, component architecture, variables, tokens, responsive layouts, high-fidelity prototyping</p></div>
-          </div>
-        </div>
-
-        <figure class="hero-figure case-hero-visual reveal">
-          <img
-            src="/assets/images/subtrack/subtrack-cover.webp"
-            alt="Subtrack case-study cover for a responsive subscription-management interface"
-            width="1600"
-            height="1200"
-            loading="eager"
-            decoding="async"
-          >
-          <figcaption>Subtrack — subscriptions, expenses, and renewals under control.</figcaption>
-        </figure>
-      </section>
-
-      <section class="case-study-section reveal">
-        <header class="section-title">
-          <p class="eyebrow">PROBLEM</p>
-          <h2>The challenge</h2>
-        </header>
-        <p>Subscription information is often distributed across receipts, banking apps, and individual service accounts. The interface needed to consolidate recurring costs without becoming another dense financial dashboard, while preserving clear priorities across desktop, tablet, and mobile.</p>
-        <ul class="challenge-list">
-          <li>Monthly spending was difficult to understand as a whole.</li>
-          <li>Renewal, payment, and cancellation states competed for attention.</li>
-          <li>Dense desktop information needed a coherent responsive behavior.</li>
-        </ul>
-      </section>
-
-      <section class="case-study-section reveal">
-        <header class="section-title">
-          <p class="eyebrow">EVIDENCE</p>
-          <h2>What the interface definition revealed</h2>
-        </header>
-        <div class="finding-grid">
-          <article class="finding-card">
-            <h3>Cost needed a single overview</h3>
-            <p class="evidence"><strong>Evidence:</strong> Individual subscription cards did not communicate total monthly impact or near-term spending.</p>
-            <p class="impact"><strong>Impact:</strong> Users could review services without understanding the broader financial picture.</p>
-          </article>
-          <article class="finding-card">
-            <h3>Renewal states needed hierarchy</h3>
-            <p class="evidence"><strong>Evidence:</strong> Active, upcoming, failed, and cancellation-related states required different levels of urgency.</p>
-            <p class="impact"><strong>Impact:</strong> Treating every item equally would make time-sensitive actions harder to scan.</p>
-          </article>
-          <article class="finding-card">
-            <h3>Repeated content required a system</h3>
-            <p class="evidence"><strong>Evidence:</strong> Cards, filters, prices, badges, and payment details recur across multiple views and breakpoints.</p>
-            <p class="impact"><strong>Impact:</strong> One-off styling would introduce inconsistency and make responsive refinement slower.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="case-study-section reveal">
-        <header class="section-title">
-          <p class="eyebrow">DECISIONS</p>
-          <h2>Design response</h2>
-        </header>
-        <p>The interface organizes subscription management around overview, urgency, and reusable behavior rather than presenting every piece of data with equal visual weight.</p>
-        <div class="decision-chains">
-          <article class="decision-chain">
-            <div class="decision-cell finding">
-              <span class="decision-label">Finding</span>
-              <p>Recurring costs were fragmented across individual services.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell decision">
-              <span class="decision-label">Design decision</span>
-              <p>Create a dashboard with monthly spending, upcoming renewals, active services, and estimated savings.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell value">
-              <span class="decision-label">User value</span>
-              <p>Users gain an immediate view of what they pay, what renews next, and where action may be useful.</p>
-            </div>
-          </article>
-          <article class="decision-chain">
-            <div class="decision-cell finding">
-              <span class="decision-label">Finding</span>
-              <p>Subscription states carry different levels of urgency.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell decision">
-              <span class="decision-label">Design decision</span>
-              <p>Use consistent semantic badges, dates, alerts, and action patterns for each state.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell value">
-              <span class="decision-label">User value</span>
-              <p>Users can distinguish routine information from failed payments or upcoming renewals more quickly.</p>
-            </div>
-          </article>
-          <article class="decision-chain">
-            <div class="decision-cell finding">
-              <span class="decision-label">Finding</span>
-              <p>Desktop density could not simply be compressed on smaller screens.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell decision">
-              <span class="decision-label">Design decision</span>
-              <p>Build adaptive list-and-detail layouts from shared components and prioritized fields.</p>
-            </div>
-            <div class="decision-connector" aria-hidden="true"></div>
-            <div class="decision-cell value">
-              <span class="decision-label">User value</span>
-              <p>The same core tasks remain understandable without preserving unnecessary desktop density.</p>
-            </div>
-          </article>
-        </div>
-        <figure class="case-feature-visual reveal">
-          <img
-            src="/assets/images/subtrack/subtrack-dashboard.webp"
-            alt="Subtrack dashboard showing subscription cards, renewal information, spending, and payment details"
-            width="1800"
-            height="1080"
-            loading="lazy"
-            decoding="async"
-          >
-          <figcaption>The dashboard combines overview, subscription detail, upcoming renewals, and savings opportunities within one component system.</figcaption>
-        </figure>
-        <p class="flow-label">CORE MANAGEMENT FLOW</p>
-        <div class="decision-flow" aria-label="Subtrack management flow">
-          <span class="flow-step">Review overview</span>
-          <span class="flow-divider" aria-hidden="true">→</span>
-          <span class="flow-step">Filter subscriptions</span>
-          <span class="flow-divider" aria-hidden="true">→</span>
-          <span class="flow-step">Open details</span>
-          <span class="flow-divider" aria-hidden="true">→</span>
-          <span class="flow-step">Review renewal</span>
-          <span class="flow-divider" aria-hidden="true">→</span>
-          <span class="flow-step">Update, renew, or cancel</span>
-        </div>
-      </section>
-
-      <section class="case-study-section reveal">
-        <header class="section-title">
-          <p class="eyebrow">VALUE</p>
-          <h2>Outcome & learning</h2>
-        </header>
-        <p>The result is a reusable UI foundation that consolidates subscription data, differentiates operational states, and adapts information density across screen sizes. The project demonstrates how a component system can support clarity rather than functioning only as a production asset.</p>
-        <ul class="challenge-list">
-          <li>Clear hierarchy matters more than displaying every available detail at once.</li>
-          <li>Semantic states should remain consistent across cards, lists, and detail views.</li>
-          <li>Responsive design decisions belong inside the component model from the beginning.</li>
-        </ul>
-      </section>
-
-      <footer class="case-study-footer">
-        <div class="footer-actions">
-          <a class="btn secondary" href="/#work">Back to selected work</a>
-          <a class="next-project" href="/work/forumgo.html" aria-label="View next project: ForumGo">
-            <p>Next project</p>
-            <p class="next-title">ForumGo</p>
-            <p class="next-note">Voting experience redesign</p>
-          </a>
-        </div>
-      </footer>
-    </article>
-  </main>
+<body data-page-id="subtrack" data-page-type="case_study"><!-- Google Tag Manager (noscript) --><noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NS6PZJFH" style="display:none;visibility:hidden" width="0"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="header" data-header="">
+<div class="shell nav">
+<a class="brand" href="/">Camilo Rojas</a>
+<div class="nav-main"><nav aria-label="Main navigation" class="navlinks" data-nav="" id="navlinks">
+<a href="/#work">Work</a>
+<a href="/#skills">Capabilities</a>
+<a href="/#about">About</a>
+<a href="/#contact">Contact</a>
+</nav><button aria-controls="navlinks" aria-expanded="false" class="menu" data-menu="" type="button">Menu</button></div></div>
+</header><nav aria-label="Language selector" class="language-switcher" data-active-language="en" data-language-switcher="">
+<a aria-label="Switch to Spanish. Current language: English." class="language-switcher__toggle" data-language="es" data-language-switch="" data-switch-location="floating_bottom_left" href="/es/work/subtrack.html" hreflang="es" lang="es">
+<span aria-hidden="true" class="language-switcher__slider"></span>
+<span aria-current="true" class="language-switcher__option" data-language-option="en">EN</span>
+<span class="language-switcher__option" data-language-option="es">ES</span>
+</a>
+</nav>
+<main id="main">
+<article class="shell case-study">
+<section class="case-study-hero">
+<div class="hero-copy reveal">
+<p class="eyebrow">CASE STUDY</p>
+<h1>Subtrack</h1>
+<p class="lead">Creating a responsive subscription-management interface that turns recurring payments, renewals, and savings opportunities into a clearer system.</p>
+<div class="case-study-meta">
+<div><span class="label mono">Category</span><p>UI Design · Responsive Web · Design Systems</p></div>
+<div><span class="label mono">Role</span><p>UI Design &amp; Design Systems</p></div>
+<div><span class="label mono">Context</span><p>Independent interface and responsive-system case study</p></div>
+<div><span class="label mono">Methods</span><p>Information hierarchy, component architecture, variables, tokens, responsive layouts, high-fidelity prototyping</p></div>
+</div>
+</div>
+<figure class="hero-figure case-hero-visual reveal">
+<img alt="Subtrack case-study cover for a responsive subscription-management interface" decoding="async" height="1500" loading="eager" src="/assets/images/subtrack/subtrack-cover.webp" width="1200"/><div aria-hidden="true" class="cover-copy"><p class="cover-project">Subtrack</p><p class="cover-headline"><span>Your subscriptions, spending,</span><span>and renewals under control.</span></p><p class="cover-discipline">UI Design · Subscription Management</p></div>
+<figcaption>Subtrack — subscriptions, expenses, and renewals under control.</figcaption>
+</figure>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">PROBLEM</p>
+<h2>The challenge</h2>
+</header>
+<p>Subscription information is often distributed across receipts, banking apps, and individual service accounts. The interface needed to consolidate recurring costs without becoming another dense financial dashboard, while preserving clear priorities across desktop, tablet, and mobile.</p>
+<ul class="challenge-list">
+<li>Monthly spending was difficult to understand as a whole.</li>
+<li>Renewal, payment, and cancellation states competed for attention.</li>
+<li>Dense desktop information needed a coherent responsive behavior.</li>
+</ul>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">EVIDENCE</p>
+<h2>What the interface definition revealed</h2>
+</header>
+<div class="finding-grid">
+<article class="finding-card">
+<h3>Cost needed a single overview</h3>
+<p class="evidence"><strong>Evidence:</strong> Individual subscription cards did not communicate total monthly impact or near-term spending.</p>
+<p class="impact"><strong>Impact:</strong> Users could review services without understanding the broader financial picture.</p>
+</article>
+<article class="finding-card">
+<h3>Renewal states needed hierarchy</h3>
+<p class="evidence"><strong>Evidence:</strong> Active, upcoming, failed, and cancellation-related states required different levels of urgency.</p>
+<p class="impact"><strong>Impact:</strong> Treating every item equally would make time-sensitive actions harder to scan.</p>
+</article>
+<article class="finding-card">
+<h3>Repeated content required a system</h3>
+<p class="evidence"><strong>Evidence:</strong> Cards, filters, prices, badges, and payment details recur across multiple views and breakpoints.</p>
+<p class="impact"><strong>Impact:</strong> One-off styling would introduce inconsistency and make responsive refinement slower.</p>
+</article>
+</div>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">DECISIONS</p>
+<h2>Design response</h2>
+</header>
+<p>The interface organizes subscription management around overview, urgency, and reusable behavior rather than presenting every piece of data with equal visual weight.</p>
+<div class="decision-chains">
+<article class="decision-chain">
+<div class="decision-cell finding">
+<span class="decision-label">Finding</span>
+<p>Recurring costs were fragmented across individual services.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell decision">
+<span class="decision-label">Design decision</span>
+<p>Create a dashboard with monthly spending, upcoming renewals, active services, and estimated savings.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell value">
+<span class="decision-label">User value</span>
+<p>Users gain an immediate view of what they pay, what renews next, and where action may be useful.</p>
+</div>
+</article>
+<article class="decision-chain">
+<div class="decision-cell finding">
+<span class="decision-label">Finding</span>
+<p>Subscription states carry different levels of urgency.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell decision">
+<span class="decision-label">Design decision</span>
+<p>Use consistent semantic badges, dates, alerts, and action patterns for each state.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell value">
+<span class="decision-label">User value</span>
+<p>Users can distinguish routine information from failed payments or upcoming renewals more quickly.</p>
+</div>
+</article>
+<article class="decision-chain">
+<div class="decision-cell finding">
+<span class="decision-label">Finding</span>
+<p>Desktop density could not simply be compressed on smaller screens.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell decision">
+<span class="decision-label">Design decision</span>
+<p>Build adaptive list-and-detail layouts from shared components and prioritized fields.</p>
+</div>
+<div aria-hidden="true" class="decision-connector"></div>
+<div class="decision-cell value">
+<span class="decision-label">User value</span>
+<p>The same core tasks remain understandable without preserving unnecessary desktop density.</p>
+</div>
+</article>
+</div>
+<figure class="case-feature-visual reveal">
+<img alt="Subtrack dashboard showing subscription cards, renewal information, spending, and payment details" decoding="async" height="1080" loading="lazy" src="/assets/images/subtrack/subtrack-dashboard.webp" width="1800"/>
+<figcaption>The dashboard combines overview, subscription detail, upcoming renewals, and savings opportunities within one component system.</figcaption>
+</figure>
+<p class="flow-label">CORE MANAGEMENT FLOW</p>
+<div aria-label="Subtrack management flow" class="decision-flow">
+<span class="flow-step">Review overview</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Filter subscriptions</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Open details</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Review renewal</span>
+<span aria-hidden="true" class="flow-divider">→</span>
+<span class="flow-step">Update, renew, or cancel</span>
+</div>
+</section>
+<section class="case-study-section reveal">
+<header class="section-title">
+<p class="eyebrow">VALUE</p>
+<h2>Outcome &amp; learning</h2>
+</header>
+<p>The result is a reusable UI foundation that consolidates subscription data, differentiates operational states, and adapts information density across screen sizes. The project demonstrates how a component system can support clarity rather than functioning only as a production asset.</p>
+<ul class="challenge-list">
+<li>Clear hierarchy matters more than displaying every available detail at once.</li>
+<li>Semantic states should remain consistent across cards, lists, and detail views.</li>
+<li>Responsive design decisions belong inside the component model from the beginning.</li>
+</ul>
+</section>
+<footer class="case-study-footer">
+<div class="footer-actions">
+<a class="btn secondary" href="/#work">Back to selected work</a>
+<nav aria-label="Case study navigation" class="project-pagination"><a aria-label="View previous project: PagoConectado" class="project-nav-link previous-project" href="/work/pagoconectado.html"><p>Previous project</p><p class="next-title">PagoConectado</p><p class="next-note">Offline payment experience</p></a><a aria-label="View next project: ForumGo" class="project-nav-link next-project" href="/work/forumgo.html"><p>Next project</p><p class="next-title">ForumGo</p><p class="next-note">Voting experience redesign</p></a></nav></div>
+</footer>
+</article>
+</main>
 </body>
 </html>
