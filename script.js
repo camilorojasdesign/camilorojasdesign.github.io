@@ -634,3 +634,163 @@ if (prefersReducedMotion || !("IntersectionObserver" in window)) {
 
   revealElements.forEach((element) => observer.observe(element));
 }
+
+const prototypeMessages = document.documentElement.lang
+  .toLowerCase()
+  .startsWith("es")
+  ? {
+      loading: "Cargando la demostración interactiva…",
+      ready: "Prototipo listo para interactuar.",
+      restarting: "Reiniciando el prototipo…",
+      restarted: "Prototipo reiniciado.",
+      error:
+        "No fue posible cargar la demostración. Reintenta o ábrela en pantalla completa.",
+    }
+  : {
+      loading: "Loading the interactive demonstration…",
+      ready: "Prototype ready to interact.",
+      restarting: "Restarting the prototype…",
+      restarted: "Prototype restarted.",
+      error:
+        "The demonstration could not load. Try again or open it in full screen.",
+    };
+
+const trackPrototypeInteraction = (eventName) => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: eventName,
+    project_id: "pagoconectado",
+    language: document.documentElement.lang || "unknown",
+    placement: "case_study",
+  });
+};
+
+document.querySelectorAll("[data-prototype-demo]").forEach((demo) => {
+  const startButton = demo.querySelector("[data-prototype-start]");
+  const restartButton = demo.querySelector("[data-prototype-restart]");
+  const openLink = demo.querySelector("[data-prototype-open]");
+  const frame = demo.querySelector(".prototype-frame[data-src]");
+  const status = demo.querySelector("[data-prototype-status]");
+
+  if (!startButton || !frame || !status) {
+    return;
+  }
+
+  const initialStartLabel = startButton.textContent;
+  let loadTimeout;
+  let loadIntent = "start";
+
+  const setStatus = (message, { isError = false } = {}) => {
+    status.textContent = message;
+    status.classList.toggle("is-error", isError);
+  };
+
+  const handleReady = () => {
+    window.clearTimeout(loadTimeout);
+    demo.classList.remove("is-loading");
+    demo.classList.add("is-active");
+    demo.removeAttribute("aria-busy");
+    startButton.hidden = true;
+    startButton.disabled = false;
+    frame.removeAttribute("tabindex");
+
+    if (restartButton) {
+      restartButton.hidden = false;
+      restartButton.disabled = false;
+    }
+
+    setStatus(
+      loadIntent === "restart"
+        ? prototypeMessages.restarted
+        : prototypeMessages.ready,
+    );
+    frame.focus({ preventScroll: true });
+  };
+
+  const handlePrototypeReady = (event) => {
+    if (event.source !== frame.contentWindow) {
+      return;
+    }
+
+    if (event.origin !== window.location.origin) {
+      return;
+    }
+
+    if (event.data?.type !== "pagoconectado:ready") {
+      return;
+    }
+
+    if (!demo.classList.contains("is-loading")) {
+      return;
+    }
+
+    handleReady();
+  };
+
+  const handleTimeout = () => {
+    demo.classList.remove("is-loading");
+    demo.removeAttribute("aria-busy");
+    startButton.disabled = false;
+    startButton.textContent =
+      startButton.dataset.retryLabel || initialStartLabel;
+
+    if (restartButton) {
+      restartButton.disabled = false;
+    }
+
+    setStatus(prototypeMessages.error, { isError: true });
+  };
+
+  const loadPrototype = ({ restart = false } = {}) => {
+    window.clearTimeout(loadTimeout);
+    loadIntent = restart ? "restart" : "start";
+    demo.classList.add("is-loading");
+    demo.setAttribute("aria-busy", "true");
+    setStatus(
+      restart ? prototypeMessages.restarting : prototypeMessages.loading,
+    );
+
+    if (restart) {
+      if (restartButton) {
+        restartButton.disabled = true;
+      }
+    } else {
+      startButton.disabled = true;
+      startButton.textContent =
+        startButton.dataset.loadingLabel || prototypeMessages.loading;
+    }
+
+    const source = new URL(frame.dataset.src, window.location.href);
+    if (restart) {
+      source.searchParams.set("restart", Date.now().toString());
+    }
+    source.hash = "/";
+    frame.src = source.href;
+
+    loadTimeout = window.setTimeout(handleTimeout, 15000);
+    trackPrototypeInteraction(restart ? "prototype_restart" : "prototype_start");
+  };
+
+  window.addEventListener("message", handlePrototypeReady);
+  startButton.addEventListener("click", () => loadPrototype());
+  restartButton?.addEventListener("click", () =>
+    loadPrototype({ restart: true }),
+  );
+  openLink?.addEventListener("click", () =>
+    trackPrototypeInteraction("prototype_open_fullscreen"),
+  );
+
+  if ("IntersectionObserver" in window) {
+    const prototypeVisibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        document.body.classList.toggle(
+          "prototype-demo-in-view",
+          entry.isIntersecting,
+        );
+      },
+      { threshold: 0.05 },
+    );
+
+    prototypeVisibilityObserver.observe(demo);
+  }
+});
