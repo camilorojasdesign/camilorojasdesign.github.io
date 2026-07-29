@@ -39,7 +39,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section class="case-study-hero">
 <div class="hero-copy reveal">
 <p class="eyebrow">CASE STUDY</p>
-<h1>PagoConectado</h1>
+<h1 class="case-brand-title">
+<img alt="PagoConectado" decoding="async" height="142" loading="eager" src="/assets/images/pagoconectado/PagoConectado-logo-full.svg" width="992"/>
+</h1>
 <p class="lead">Designing a payment experience that helps both sides register, verify, and understand a transaction when internet access is unreliable.</p>
 <div class="case-study-meta">
 <div><span class="label mono">Category</span><p>Product Design · Fintech · Offline Experience</p></div>
@@ -144,10 +146,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </article>
 </div>
+<div class="case-context-gallery">
 <figure class="case-feature-visual reveal">
-<img alt="Buyer and shop owner showing matching PagoConectado transaction evidence on their phones" decoding="async" height="1080" loading="lazy" src="/assets/images/pagoconectado/pagoconectado-transaction.webp" width="1800"/>
-<figcaption>Shared evidence gives both sides a consistent record while the system communicates whether synchronization is complete.</figcaption>
+<img alt="PagoConectado state sequence from offline registration through synchronization and shared confirmation" decoding="async" height="1080" loading="lazy" src="/assets/images/pagoconectado/EN/1_EN_PagoConectado_estados.webp" width="1920"/>
+<figcaption>The state model distinguishes local recording, network synchronization, and shared confirmation so users know what has happened and what remains pending.</figcaption>
 </figure>
+<figure class="case-feature-visual reveal">
+<img alt="PagoConectado screens coordinating the buyer, seller, and system perspectives of the same payment" decoding="async" height="1080" loading="lazy" src="/assets/images/pagoconectado/EN/2_EN_PagoConectado_pantallas.webp" width="1920"/>
+<figcaption>The same payment is communicated from three coordinated perspectives: buyer, seller, and system.</figcaption>
+</figure>
+<figure class="case-feature-visual reveal">
+<img alt="PagoConectado interfaces warning about a possible duplicate and offering a synchronization retry" decoding="async" height="1080" loading="lazy" src="/assets/images/pagoconectado/EN/3_EN_PagoConectado_erroresrecuperables.webp" width="1920"/>
+<figcaption>Recoverable-error states help prevent repeated payments and provide a clear path back to synchronization.</figcaption>
+</figure>
+<figure class="case-feature-visual reveal">
+<img alt="Buyer and seller verifying the same PagoConectado payment record in a low-connectivity store" decoding="async" height="1080" loading="lazy" src="/assets/images/pagoconectado/EN/4_EN_PagoConectado_escenarioreal.webp" width="1920"/>
+<figcaption>Shared evidence helps both parties verify the same payment record before network confirmation is complete.</figcaption>
+</figure>
+</div>
 <p class="flow-label">FINAL INTERACTION FLOW</p>
 <div aria-label="PagoConectado process flow" class="decision-flow">
 <span class="flow-step">Enter payment</span>
@@ -161,6 +177,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <span class="flow-step">Share evidence</span>
 <span aria-hidden="true" class="flow-divider">→</span>
 <span class="flow-step">Synchronize</span>
+</div>
+</section>
+<section aria-labelledby="prototype-title" class="case-study-section prototype-section reveal" id="prototype">
+<header class="section-title">
+<p class="eyebrow">INTERACTIVE PROTOTYPE</p>
+<h2 id="prototype-title">Try the critical flow</h2>
+</header>
+<div class="prototype-layout">
+<div class="prototype-copy">
+<p>This functional prototype lets you explore PagoConectado’s key moment: recording a payment without connectivity, preserving evidence, and understanding what changes when the network returns.</p>
+<ol class="prototype-steps">
+<li>Start offline and select <span lang="es">“Pagar”</span>.</li>
+<li>Choose a recipient and amount; use the demo PIN <code>1234</code>.</li>
+<li>Return home, simulate connectivity, and synchronize the pending payments.</li>
+</ol>
+<p class="prototype-note" id="prototype-note-en">Simulated demonstration: it does not process money, request permissions, or store personal data. The product interface is presented in Spanish for its Colombian context.</p>
+</div>
+<div class="prototype-demo" data-prototype-demo="">
+<div class="prototype-device">
+<img alt="" aria-hidden="true" class="prototype-poster" decoding="async" height="1688" loading="lazy" src="/assets/images/pagoconectado/prototype-poster.webp" width="780"/>
+<iframe allow="camera 'none'; microphone 'none'; geolocation 'none'; payment 'none'" aria-describedby="prototype-note-en" class="prototype-frame" data-src="/assets/prototypes/pagoconectado/index.html" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin" tabindex="-1" title="Interactive mobile prototype of PagoConectado"></iframe>
+<div class="prototype-launch">
+<p>Interactive mobile demo</p>
+<button class="btn primary prototype-start" data-loading-label="Loading prototype…" data-prototype-start="" data-retry-label="Try again" type="button">Start prototype</button>
+</div>
+</div>
+<p aria-live="polite" class="prototype-status" data-prototype-status="" role="status"></p>
+<div class="prototype-actions">
+<button class="btn secondary prototype-control" data-prototype-restart="" hidden="" type="button">Restart</button>
+<a class="btn secondary prototype-control" data-prototype-open="" href="/assets/prototypes/pagoconectado/index.html" rel="noopener noreferrer" target="_blank">Open full screen <span aria-hidden="true">↗</span></a>
+</div>
+</div>
 </div>
 </section>
 <section class="case-study-section reveal">
